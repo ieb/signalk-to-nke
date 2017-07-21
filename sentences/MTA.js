@@ -12,7 +12,7 @@ module.exports = function(app) {
         'environment.outside.temperature'
       ],
       f: function mta(temperature) {
-        console.log("Got MTA--------------------------");
+        //console.log("Got MTA--------------------------");
         var celcius = temperature - 273.15;
         return nmea.toSentence([
           '$IIMTA',

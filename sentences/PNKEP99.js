@@ -12,7 +12,7 @@ module.exports = function(app) {
         'navigation.speedThroughWater', 'performance.polarSpeed', 'performance.polarSpeedRatio'
       ],
       f: function pnkep1(angleApparent, speedApparent, angleTrueWater, speedTrue, speedThroughWater, polarSpeed, polarSpeedRatio) {
-        console.log("Got Polar speed --------------------------------------------------");
+        //console.log("Got Polar speed --------------------------------------------------");
         return nmea.toSentence([
           '$PNKEP',
           '99',

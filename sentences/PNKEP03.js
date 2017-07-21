@@ -17,7 +17,7 @@ module.exports = function(app) {
         'performance.targetAngle', 'performance.velocityMadeGood', 'performance.targetSpeed', 'performance.polarSpeedRatio'
       ],
       f: function pnkep2(targetAngle, velocityMadeGood, targetSpeed, polarSpeedRatio) {
-        console.log("GOT Target angle -----------------------------------");
+        //console.log("GOT Target angle -----------------------------------");
          var vmgRatio = 1.0;
         if ( targetSpeed > 1.0E-3 ) {
           vmgRatio = velocityMadeGood/targetSpeed;

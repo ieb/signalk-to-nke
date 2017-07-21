@@ -64,7 +64,7 @@ module.exports = function(app) {
           return false;
 
       }).onValue(nmeaString => {
-        console.log("NMEA0183 Encoder",name," ",nmeaString);
+        //console.log("NMEA0183 Encoder",name," ",nmeaString);
 
 
         app.emit('nmea0183out', nmeaString);

@@ -13,7 +13,7 @@ module.exports = function(app) {
         'performance.tackMagnetic'
       ],
       f: function pnkep2(tackMagnetic) {
-                console.log("Got tackMagnetic --------------------------------------------------");
+                //console.log("Got tackMagnetic --------------------------------------------------");
 
         return nmea.toSentence([
           '$PNKEP',

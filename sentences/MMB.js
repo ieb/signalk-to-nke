@@ -15,7 +15,7 @@ module.exports = function(app) {
         'environment.outside.pressure'
       ],
       f: function hdg(pressure) {
-        console.log("Got MMB--------------------------");
+        //console.log("Got MMB--------------------------");
         return nmea.toSentence([
           '$IIMMB',
           (pressure/3386.39).toFixed(4),
