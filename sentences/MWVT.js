@@ -7,7 +7,7 @@ module.exports = function(app) {
   return {
       title: "MWV - True Wind heading and speed",
       keys: [
-        'environment.wind.angleTrueWater', 'environment.wind.speedTrue'
+        'environment.wind.angleTrue', 'environment.wind.speedTrue'
       ],
 
       f: function mwv(angle, speed) {

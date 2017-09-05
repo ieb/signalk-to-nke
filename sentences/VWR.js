@@ -29,7 +29,7 @@ module.exports = function(app) {
           windDirection,
           nmea.msToKnots(speedApparent).toFixed(2),
           'N',
-          speedApparent,
+          speedApparent.toFixed(2),
           'M',
           nmea.msToKM(speedApparent).toFixed(2),
           'K'

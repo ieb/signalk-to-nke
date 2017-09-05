@@ -4,6 +4,32 @@ const fs = require('fs')
 
 module.exports = function(app) {
 
+  function createLogger(logdir) {
+    var winston = require('winston'),
+      transports = [];
+
+    require('winston-daily-rotate-file')
+
+    var logfilename = require('path').join(
+      (logdir.indexOf('/') === 0 ? '' : (__dirname + "/../") ) +
+      logdir +
+      "/signalk-nmea.log");
+    transports.push(new winston.transports.DailyRotateFile({
+      name: 'file',
+      datePattern: '.yyyy-MM-ddTHH',
+      filename: logfilename,
+      json: false,
+      formatter: function(options) {
+        // Return string will be passed to logger.
+        return new Date().getTime() + ';' + options.message;
+      }
+    }));
+    return new winston.Logger({
+      transports: transports
+    });
+  }
+
+
   function load_sentences (app, plugin, dir) {
     fpath = path.join(__dirname, dir)
     files = fs.readdirSync(fpath).filter(function(f) {
@@ -16,6 +42,7 @@ module.exports = function(app) {
       return sobj;
     }).filter(calc => { return typeof calc !== 'undefined'; });
   }
+
 
   var plugin = {
     unsubscribes: []
@@ -31,6 +58,7 @@ module.exports = function(app) {
     description: "If there is SK data for the conversion generate the following NKE NMEA0183 sentences from Signal K data:",
     properties: {}
   }
+  plugin.logger = createLogger('/var/log/signalk');
   
   plugin.start = function(options) {
     const selfContext = 'vessels.' + app.selfId
@@ -66,10 +94,14 @@ module.exports = function(app) {
       }).onValue(nmeaString => {
         //console.log("NMEA0183 Encoder",name," ",nmeaString);
 
-
+        // plugin.logger.info(nmeaString);
         app.emit('nmea0183out', nmeaString);
-      }))
+      }));
+      // Could create a logger that subscribes to all changes here and only emits once per n seconds.
     }
+
+
+
 
     for (var i = plugin.sentences.length - 1; i >= 0; i--) {
         var sentence = plugin.sentences[i];

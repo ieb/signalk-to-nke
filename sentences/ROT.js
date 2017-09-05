@@ -11,7 +11,7 @@ module.exports = function(app) {
         var degm = rot * 3437.74677078493
         return nmea.toSentence([
           '$SKROT',
-          degm.toFixed(1),
+          degm.toFixed(2),
           'A'
         ]);
       }

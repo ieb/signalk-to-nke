@@ -16,7 +16,7 @@ $PNKEP,01,x.x,N,x.x,K*hh
 | STW target in km/h
 */
 
-// to verify
+// $PNKEP,01,3.69,N,6.83,K*69
 const nmea = require('../nmea.js');
 module.exports = function(app) {
   return {

@@ -17,7 +17,7 @@ module.exports = function(app) {
           '$IIXTE',
           'A',
           'A',
-          crossTrackError.toFixed(2),
+          crossTrackError.toFixed(3),
           crossTrackError<0?'R':'L',
           'N'
         ]);

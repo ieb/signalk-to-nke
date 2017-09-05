@@ -8,7 +8,7 @@ module.exports = function(app) {
       title: "PNKEP,99 - Debug",
       keys: [
       'environment.wind.angleApparent', 'environment.wind.speedApparent', 
-        'environment.wind.angleTrueWater',  'environment.wind.speedTrue',  
+        'environment.wind.angleTrue',  'environment.wind.speedTrue',  
         'navigation.speedThroughWater', 'performance.polarSpeed', 'performance.polarSpeedRatio'
       ],
       f: function pnkep1(angleApparent, speedApparent, angleTrueWater, speedTrue, speedThroughWater, polarSpeed, polarSpeedRatio) {

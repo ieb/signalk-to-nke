@@ -30,7 +30,7 @@ module.exports = function(app) {
           '$INMWV',
           nmea.radsToDeg(angle).toFixed(2),
           'R',
-          speed.toFixed(1),
+          speed.toFixed(2),
           'M',
           'A'
         ]);

@@ -31,9 +31,9 @@ module.exports = function(app) {
           'T',
           nmea.radsToDeg(headingMagnetic).toFixed(1),
           'M',
-          nmea.msToKnots(speedThroughWater).toFixed(1),
+          nmea.msToKnots(speedThroughWater).toFixed(2),
           'N',
-          nmea.msToKM(speedThroughWater).toFixed(1),
+          nmea.msToKM(speedThroughWater).toFixed(2),
           'K'
         ]);
       }

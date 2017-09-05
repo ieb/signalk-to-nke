@@ -55,7 +55,7 @@ module.exports = function(app) {
           (sog * 1.94384).toFixed(2),
           nmea.radsToDeg(cog).toFixed(2),
           '0000',
-          nmea.radsToDeg(variation).toFixed(1), 
+          nmea.radsToDeg(variation).toFixed(2), 
           variationDir
         ]);
       }

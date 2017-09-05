@@ -13,7 +13,7 @@ module.exports = function(app) {
   return {
       title: "VWT - True wind speed relative to boat.",
       keys: [
-        'environment.wind.angleTrueWater',  'environment.wind.speedTrue'
+        'environment.wind.angleTrue',  'environment.wind.speedTrue'
       ],
       f: function mwd(angleTrueWater, speedTrue) {
         return nmea.toSentence([

@@ -3,7 +3,8 @@ Air temperature:
 $IIMTA,x.x,C*hh
  I__I_Temperature in degrees C
   */
-// to verify
+// $IIMTA,34.80,C*3A
+
 const nmea = require('../nmea.js');
 module.exports = function(app) {
   return {

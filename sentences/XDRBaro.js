@@ -3,7 +3,8 @@
 /**
     $IIXDR,P,1.02481,B,Barometer*0D
 */
-// to verify
+// $IIXDR,P,1.0050,B,Barometer*13
+
 const nmea = require('../nmea.js');
 module.exports = function(app) {
   return {

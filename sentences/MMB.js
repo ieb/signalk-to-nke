@@ -6,11 +6,11 @@ $IIMMB,x.x,I,x.x,B*hh
  I I I__I_Atmospheric pressure in bars
  I_ I_Atmospheric pressure in inches of mercury
  */
-// to verify
+// $IIMMB,29.6776,I,1.00,B*73
  const nmea = require('../nmea.js');
 module.exports = function(app) {
   return {
-      title: "MMB - Heading true",
+      title: "MMB - Environment outside pressure",
       keys: [
         'environment.outside.pressure'
       ],
@@ -20,7 +20,7 @@ module.exports = function(app) {
           '$IIMMB',
           (pressure/3386.39).toFixed(4),
           'I',
-          (pressure/1.0E5).toFixed(2),
+          (pressure/1.0E5).toFixed(4),
           'B'
         ]);
       }
